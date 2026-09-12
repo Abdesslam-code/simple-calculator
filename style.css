@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.calculator {
+    background: #2d3436;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.display {
+    background: #1e272e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#result {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 2.5em;
+    color: #00ff88;
+    text-align: right;
+    font-weight: bold;
+    outline: none;
+    font-family: 'Courier New', monospace;
+}
+
+#result::placeholder {
+    color: #555;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background: #636e72;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #74b9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-operator {
+    background: #d63031;
+    font-weight: bold;
+}
+
+.btn-operator:hover {
+    background: #ff7675;
+}
+
+.btn-clear {
+    background: #e17055;
+    grid-column: span 2;
+}
+
+.btn-clear:hover {
+    background: #fab1a0;
+}
+
+.btn-equals {
+    background: #00b894;
+    grid-column: span 2;
+    font-size: 1.8em;
+}
+
+.btn-equals:hover {
+    background: #55efc4;
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* الاستجابة للأجهزة الصغيرة */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    #result {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+}
